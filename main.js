@@ -50,11 +50,15 @@ buttons.forEach(button => {
             shouldReset(resetDisplay);
             hasPressedEqual = false;
         } else if (button.classList.contains('equal')){
-            number2 = parseFloat(display.textContent);
-            display.textContent = operate(operator,number1,number2);
-            number1 = parseFloat(display.textContent);
-            resetDisplay = true
-            hasPressedEqual = true;
+            if (number1 === null || operator === null || display.textContent === '') {
+                display.textContent = "Error, press A/C to clear";
+            } else {
+                number2 = parseFloat(display.textContent);
+                display.textContent = operate(operator, number1, number2);
+                number1 = parseFloat(display.textContent);
+                resetDisplay = true;
+                hasPressedEqual = true;
+            }
         } else if (button.classList.contains('percent')){
             display.textContent = parseFloat(display.textContent) / 100;
         } else if (button.classList.contains('sign')){
