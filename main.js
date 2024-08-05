@@ -55,9 +55,15 @@ buttons.forEach(button => {
             number1 = parseFloat(display.textContent);
             resetDisplay = true
             hasPressedEqual = true;
+        } else if (button.classList.contains('percent')){
+            display.textContent = parseFloat(display.textContent) / 100;
+        } else if (button.classList.contains('sign')){
+            display.textContent = parseFloat(display.textContent) * -1;
+        } else if (button.classList.contains('decimal')){
+            if (!display.textContent.includes('.')){
+                display.textContent += '.';
+            }
         }
-        
-
 
     });
 });
