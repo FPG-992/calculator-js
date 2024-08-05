@@ -28,7 +28,7 @@ body{
     height:30px;
 }
 
-button.zero{
+#zero.number{
     grid-column: span 2;
 }
 
