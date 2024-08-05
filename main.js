@@ -36,7 +36,7 @@ buttons.forEach(button => {
                 operator = button.textContent;
                 resetDisplay = true;
                 shouldReset(resetDisplay);
-            }else {
+            } else {
             number1 = parseFloat(display.textContent);
             operator = button.textContent;
             resetDisplay = true;
